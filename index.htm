@@ -1,0 +1,701 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+		
+			$("#slideshow > div:gt(0)").hide();
+	
+			setInterval(function() { 
+			  $('#slideshow > div:first')
+			    .fadeOut(1000)
+			    .next()
+			    .fadeIn(1000)
+			    .end()
+			    .appendTo('#slideshow');
+			},  3000);
+			
+		});
+	</script>
+
+		<style type="text/css">
+
+html, body, #container {
+	overflow-x: hidden;
+	}
+
+#container {
+	width: 100%;
+	padding: 0px;
+	}
+
+#topbar {
+	float: left;
+	width: 100%;
+	max-height: 40px;
+	background-color: #330066;
+	overflow: hidden;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	}
+	
+.topbutton {
+	background-color: #330066;
+	white-space: nowrap;
+	}
+
+#topbar a, #topbar a:active {
+	color: #FFF;
+	font-size: 12px;
+	font-family: "Futura";
+	text-transform: uppercase;
+	display:inline-block;
+	white-space: nowrap;
+	}
+
+#footer {
+	position: absolute;
+	top: 2540px;	
+	width: 100%;
+	height: auto;
+	padding: 10px 370px;
+	background-color: rgba(51,0,102,0.7);
+	margin-top: 30px;
+	}
+
+.footer {
+	color: #FFF;
+	font-size: 16px;
+	font-family: "Futura";
+	text-shadow: 1px 1px 1px #000;
+	line-height: 14px;
+	}
+
+.smallcaps {
+	color: #FFF;
+	font-size: 12px;
+	font-family: "Futura";
+	text-shadow: 1px 1px 1px #000;
+	text-transform: uppercase;
+	line-height: 18px;
+	}
+
+#sfa {
+	float: left;
+	height: 133px;
+	margin: 0px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 40px;
+	z-index: 1;
+	}
+
+#headerimg {
+	height: 200px;
+	padding-top: 1px;
+	margin-left: 50px;
+	}
+
+p.university {
+	font-family: Baskerville, Serif;
+	font-variant:small-caps;
+	color: #FFF;
+	font-size: 60px;
+	text-shadow: 2px 2px 1px #000;
+	white-space: nowrap;
+	}
+
+#nav {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	background-color: #330066;
+	margin-top: -16px;
+	list-style: none;
+	white-space: nowrap;
+	z-index: 999;
+	}
+
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+#topbar ul li {
+  display: inline-block;
+  position: relative;
+  background: #330066;
+  cursor: pointer;
+  }
+
+ul li {
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px;
+  background: #330066;
+  cursor: pointer;
+	}
+
+ul li:hover {
+  color: #fff;
+  background: #5b3284;
+	}
+
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: auto;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+	}
+
+ul li ul li { 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+	}
+
+#nav ul li ul li:hover { 
+	background: #5b3284; 
+	}
+
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+	}
+
+#nav a, #nav a:active {
+	color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font-family: "Futura";
+	display:inline-block;
+	}
+
+#slideshow { 
+    margin: 0; 
+    padding: 0; 
+    height: 240px; 
+    overflow: hidden;
+	}
+
+#slideshow img {
+	min-width: 100%;
+	}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 232px; 
+    left: 0; 
+    right: 0;
+    height: 440px; 
+    overflow: hidden;
+	}
+
+.purplebar {
+	position: absolute;
+	top: 672px;
+	height: 10px;
+	width: 100%;
+	background-color: #330066;
+	z-index:5;
+	}
+
+.purplebar2 {
+	position: absolute;
+	top: 832px;
+	height: 10px;
+	width: 100%;
+	background-color: #330066;
+	z-index:999;
+	}
+
+#buttons {
+	float: left;
+	width: 33.33%;
+	max-height: 150px;
+	padding-top: 100px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	}
+
+#buttons p {
+	color: #FFF;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px;
+	font-family: "Futura";
+	text-shadow: 2px 2px 1px #000;
+	white-space: nowrap;
+	}
+
+#navwrap, #overwrap {
+	position: absolute;
+	top: 682px;
+	width: 100%;
+	margin-right: -10px;
+	height: 150px;
+	}
+	
+#overlay {
+	float: left;
+	width: 33.33%;
+	height: 150px;
+	background-color: #330066;
+	opacity: 0.3;
+    }
+
+#overlay:hover {
+	opacity: 0;
+	} 
+
+#intro {
+	position: absolute;
+	top: 870px;
+	left: 30px;
+	right: 160px;
+	max-height: 440px;
+	min-width: 1100px;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+
+.why {
+	float: left;
+	width: 33.33%;
+	min-width: 350px;
+	max-height: auto;
+	padding: 0 30px;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+
+.why p {
+	color: #000;
+	text-align: left;
+	font-family: Baskerville, Serif;
+	line-height: 22px;
+	margin-bottom: 10px;
+	margin-top: -10px;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+
+#events a, #events a:active, #events a:visited {
+	text-decoration: none;
+	color: #330066;
+	font-size: 18px;
+	padding-left: -10px;
+	font-family: "Futura";
+	}
+
+#social a, #social a:active, #social a:visited {
+	text-decoration: none;
+	color: #330066;
+	font-size: 18px;
+	padding-left: -10px;
+	font-family: "Futura";
+	}
+
+#sidebar {
+	position: absolute;
+	width: 400px;
+	height: auto;
+	box-sizing: border-box;
+	top: 1300px;
+	left: 30px;
+	overflow: hidden;	
+	}
+
+#events, #social {
+	height: auto;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 30px;
+	margin-right: 20px;
+	margin-top: 20px;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	overflow: hidden;
+	}
+
+.date {
+	float: left;
+	color: #330066;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 30px;
+	line-height: 26px;
+	font-family: "Futura";
+	white-space: nowrap
+	}
+
+.event {
+	float: left;
+	margin-top: -10px;
+	margin-left: 30px;
+	width: 70%;
+	}
+
+.event p {
+	float: left;
+	color: #000;
+	text-align: left;
+	font-family: Baskerville, Serif;
+	font-size: 15px;
+	line-height: 18px;
+	margin-top: -10px;
+	}
+
+#main {
+	position: absolute;
+	min-width: 400px;
+	background-color: rgba(255,255,255,0.7);
+	top: 1322px;
+	left: 430px;
+	right: 160px;
+	padding: 20px 30px;
+	border-radius: 30px;
+	box-sizing: border-box;
+	}
+	
+p.main {
+	color: #000;
+	text-align: left;
+	font-family: Baskerville, Serif;
+	line-height: 24px;
+	width: 80%;
+	margin-left: 50px;
+	}
+
+#main img {
+	float: left;
+	height: auto;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	}
+
+#main h3 {
+	margin-left: 30px;
+	}
+	
+.line {
+	height: 2px;
+	width: 100%;
+	background-color: #330066;
+	float: left;
+	}
+
+p.subhead {
+	color: #FFF;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 25px;
+	margin-top: -60px;
+	font-family: "Futura";
+	text-shadow: 2px 2px #000;
+	white-space: nowrap
+	}
+
+h2 {
+	color: #FFF;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 25px;
+	font-family: "Futura";
+	text-shadow: 2px 2px 1px #000;
+	white-space: nowrap;
+	}
+
+h3 {
+	color: #330066;
+	text-align: left;
+	font-size: 16px;
+	font-family: "Futura";
+	}
+	
+p.readmore {
+	color: #330066;
+	text-align: left;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: "Futura";
+	margin-left: 30px;
+	white-space: nowrap;
+	}
+
+p.seemore {
+	float: left;
+	color: #330066;
+	text-align: left;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: "Futura";
+	white-space: nowrap;
+	}
+
+p.seemore2 {
+	float: left;
+	color: #330066;
+	text-align: left;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: "Futura";
+	padding-left: 25px;
+	padding-bottom: 10px;
+	width: 33.33%;
+	white-space: nowrap;
+	box-sizing: border-box;
+	}
+
+img.alignleft {
+	float: left;
+	margin: 10px;
+	}
+
+body {
+	margin: 0;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://silviahartmann.com/background-tile/images/pine-forest-old-tile.jpg");
+    background-repeat: repeat;
+	}
+
+a, a:active, a:visited {
+	text-decoration: none;
+	color: #FFF;
+	}
+
+
+		</style>
+
+	</head>
+
+<body>
+
+<div id="container">
+
+	<div id="topbar">
+<ul>
+	<li><div class="topbutton"><a href="#">Become a Student</a></div></li>
+	<li><div class="topbutton"><a href="#">Academics & Research</a></div></li>
+	<li><div class="topbutton"><a href="#">Students</a></div></li>
+	<li><div class="topbutton"><a href="#">Alumni & Friends</a></div></li>
+	<li><div class="topbutton"><a href="#">Faculty & Staff</a></div></li>
+	<li><div class="topbutton"><a href="#">Arts & Athletics</a></div></li>
+	<li><div class="topbutton"><a href="#">A-Z List</a></div></li>
+</ul>
+</div>
+	
+	<div id="sfa"><img style="height:auto; width:auto; max-width:100px;" src="http://www2.sfasu.edu/orsp/Images/SFA%20LOGO_2color.png"></div>
+
+	
+	<div id="headerimg"><p class="university">Stephen F. Austin State University</p><p class="subhead">Arthur Temple College of Forestry and Agriculture</p></div>
+
+
+<!--Navbar-->
+
+<div id="nav" style="text-align:center;">
+<ul>
+	<li><a href="#"><div class="navbutton">Mission Statement</div></a></li>
+	<li><a href="#"><div class="navbutton">Incoming Students</div></a>
+		<ul>
+		<li><a href="#"><div class="navbutton">Admissions</div></a></li>
+		<li><a href="#"><div class="navbutton">Incoming Freshman</div></a></li>
+		<li><a href="#"><div class="navbutton">Transfer Students</div></a></li>
+		<li><a href="#"><div class="navbutton">Financial Aid</div></a></li>
+		<li><a href="#"><div class="navbutton">Scholarships</div></a></li>
+		</ul></li>
+	<li><a href="#"><div class="navbutton">Current Students</div></a>
+		<ul>
+		<li><a href="#"><div class="navbutton">University Calendar</div></a></li>
+		<li><a href="#"><div class="navbutton">Library Resources</div></a></li>
+		<li><a href="#"><div class="navbutton">Financial Aid</div></a></li>
+		<li><a href="#"><div class="navbutton">Scholarships</div></a></li>
+		</ul></li>
+	<li><a href="#"><div class="navbutton">Graduate Students</div></a>
+		<ul>
+		<li><a href="#"><div class="navbutton">Graduate Student Studies</div></a></li>
+		<li><a href="#"><div class="navbutton">Masters Program</div></a></li>
+		<li><a href="#"><div class="navbutton">Doctorate Program</div></a>
+		<li><a href="#"><div class="navbutton">Resources</div></a></li>
+		</ul></li>
+	<li><a href="#"><div class="navbutton">Alumni</div></a>
+		<ul>
+		<li><a href="#"><div class="navbutton">Alumni Newspaper</div></a></li>
+		<li><a href="#"><div class="navbutton">Update Your Info</div></a></li>
+		</ul></li>
+</ul>
+</div>
+
+<!--Navigation-->
+	
+<div id="navwrap"><div style="background: url(http://i.telegraph.co.uk/multimedia/archive/01819/forest_1819509c.jpg);" id="buttons"><p><a href="p2.htm">Forestry</a></p></div>
+	
+		<div style="background: linear-gradient(
+      rgba(51, 0, 102, 0.25), 
+      rgba(51, 0, 102, 0.25)
+    ), 
+url(http://www.eatingdisorderpro.com/wp-content/uploads/2012/05/Wheatpic.jpg);" id="buttons"><p><a href="#">Agriculture</a></p></div>
+	
+		<div style="background: linear-gradient(
+      rgba(51, 0, 102, 0.25), 
+      rgba(51, 0, 102, 0.25)
+    ), url(http://www.brunercorp.com/blog/wp-content/uploads/2013/10/main_pic_sunflowers_wind_power.jpg)" id="buttons"><p><a href="#">Environmental Science</a></p></div></div>
+
+
+
+<!--Overlay-->
+
+<div id="overwrap"><div id="overlay"></div>
+<div id="overlay"></div>
+<div id="overlay"></div></div>
+
+
+<!--Slideshow-->
+
+<div id="slideshow">
+   <div>
+     <img src="pic1.png">
+   </div>
+   <div>
+     <img src="pic2.png">
+   </div>
+   <div>
+     <img src="pic3.png">
+   </div>
+   <div>
+     <img src="pic4.png">
+   </div>
+</div>
+
+<div class="purplebar"></div>
+
+<div class="purplebar2"></div>
+
+<!--Intro-->
+
+<div id="intro">
+	<div class="why">
+	<h2>Why Forestry?</h2></div>
+	<div class="why">
+	<h2>Why SFASU?</h2></div>
+	<div class="why">
+	<h2>Career Opportunities</h2></div><br>
+	<div class="line" style="margin-left:30px; width:95%;"></div><br>
+	
+		<div class="why"><h3>Discover how forestry is right for you.</h3>
+	<p>Forests cover one-third of the land area<br>in the United States. Forest lands<br>provide many important benefits,<br>including recreation, scenic views,<br>timber, wildlife habitat, and watersheds.<br>An education in forestry is broad,<br>with hands-on experience and<br>unlimited job potential.</p>
+	</div>
+		<div class="why">
+<h3>Find out why it's great to be a Jack.</h3>
+	<p>From award-winning research to<br>NCAA Division 1 championship<br>athletics, we strive for excellence. SFA<br>is a place of personal and professional<br>growth, where lifelong friendships<br>blossom and rewarding career paths<br>unfold. You will look back on your<br>college career with pride and cherish<br>the memories of this special time in<br>your life. Our students live the<br>Lumberjack Experience every day.</p>
+	</div>
+		<div class="why">
+<h3>See where SFASU Forestry will take you.</h3>
+	<p>Forestry offers diverse and enriching career<br>potential. Many graduates follow traditional<br>paths as foresters, park rangers, conservation<br>biologists, scientists and technicians, and<br>managers working for private industry,<br>government agencies, consulting firms or<br>schools/universities.</p>
+	</div>
+	<div class="line" style="opacity:0;"></div>
+	<p class="seemore2">See More <font size="3">&#8594;</font></p>
+	<p class="seemore2">See More <font size="3">&#8594;</font></p>
+	<p class="seemore2">See More <font size="3">&#8594;</font></p>
+</div>
+
+<!--Sidebar-->
+
+	<div id="sidebar">
+	
+	<div id="events"><h2>Events</h2>
+	<div class="line"></div><br>
+			<div class="date"><font size=3>Feb</font><br>24</div>
+			<div class="event"><h3>Wildlife Science Seminar</h3>
+			<p>"A whale tale: the near extinction and partial recovery of Antarctic blue whales."
+Dr. Trevor Branch, Assistant Professor, School of Aquatic and Fishery Sciences, University of Washington
+</p></div>
+			
+			<div class="date"><font size=3>Mar</font><br>01</div>
+			<div class="event"><h3>Introduction to Conifer Identification</h3>
+			<p>This intro to conifer ID will give you the basic knowledge to figure out what kinds of trees you&#8217;re seeing while hiking on the trail or walking around town. Part indoor presentation, part guided tour; informative, hands-on and fun.</p></div>
+
+			<div class="date"><font size=3>Mar</font><br>13</div>
+			<div class="event"><h3>SFASU Graduate Symposium</h3>
+			<p>The 11th annual SFASU Graduate Student Symposium highlights the research of our graduate students through presentations and a poster session. It&#8217;s an excellent opportunity for our students to present to their colleagues and professors, gain valuable experience and feedback, network with professional contacts and alumni, and also learn more about the work other students are doing at SFASU. </p></div>
+			<p class="seemore">See More <font size="3">&#8594;</font></p><br>
+		</div>
+
+	<div id="social"><h2>Follow Us</h2>
+	<div class="line"></div><br><br>
+
+<img style="max-width: 15%;" src="facebook.png">
+<img style="max-width: 15%;" src="twitter.png">
+<img style="max-width: 15%;" src="instagram.png">
+<img style="max-width: 15%;" src="flickr.png">
+<img style="max-width: 15%;" src="youtube.png">
+
+	</div>
+	
+	</div>
+
+
+
+	<div id="main"><h2>College News</h2>
+		<div class="line"></div><br>
+		<h3>Fifth International Fire Ecology and Management Congress</h3>
+			<p class="main"><img  src="news.png">December 3-7, 2012 members of the Stephen F. Austin State University Student Association for Fire Ecology traveled to Portland, Oregon for the Fifth International Fire Ecology and Management Congress.<br><br>Students attended workshops, made valuable contacts, and saw presentations from faculty, students and professionals from around the world. According to students, research and professional presentations were diverse, offering new insight into differing aspects of fire ecology at both the international and regional level.<br></p><p class="readmore">Read More <font size="3">&#8594;</font></p><br>
+		<br>
+		<div class="line"></div>
+		<h3>Newsletter - Summer 2012</h3>
+			<p class="main">For information on what is happening in the Arthur Temple College of Forestry and Agriculture, check out the summer 2012 newsletter in its new format. It has been redesigned and now covers the entire college &#8212; forestry, agriculture, environmental science, and spatial science. There is something for everyone from alumni to prospective students. You&#8217;ll find student, faculty, and alumni profiles, college news, student organization highlights, and much more.</p><p class="readmore">Read More <font size="3">&#8594;</font></p><br><br>	
+			
+		<div class="line"></div>
+	<br></div>
+
+</div>
+
+	<div id="footer">
+	
+		<img class="alignleft" style="height:auto; width:auto; max-width:120px; padding-right:30px; padding-top:10px;" src="http://www2.sfasu.edu/orsp/Images/SFA%20LOGO_2color.png">
+	
+	
+<p class="footer">Arthur Temple College of Forestry & Agriculture</p>
+<p class="smallcaps">419 East College St.<br>
+Box 6109, SFA Station<br>
+Nacogdoches, TX 75962-6109<br>
+Phone: (936) 468-3301<br>
+Fax: (936) 468-2489</p>
+	
+	</div>
+	
+</div>
+
+</body>
+
+</html>
